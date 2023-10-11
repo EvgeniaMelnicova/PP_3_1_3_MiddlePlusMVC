@@ -1,39 +1,35 @@
 package ru.morrigan.springbootbootstrap.service;
 
-import ru.morrigan.springbootbootstrap.dao.RoleDao;
+import lombok.AllArgsConstructor;
+import ru.morrigan.springbootbootstrap.repository.RoleRepository;
 import ru.morrigan.springbootbootstrap.model.Role;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class RoleServiceImpl implements RoleService {
-    private final RoleDao roleDao;
-
-    @Autowired
-    public RoleServiceImpl(RoleDao roleDao) {
-        this.roleDao = roleDao;
-    }
+    private final RoleRepository roleRepository;
 
     @Override
     public List<Role> getAllRoles() {
-        return roleDao.getAllRoles();
+        return (List<Role>) roleRepository.findAll();
     }
 
     @Override
     public Role getRole(String userRole) {
-        return roleDao.getRole(userRole);
+        return roleRepository.findByUserRole(userRole);
     }
 
     @Override
     public Role getRoleById(Long id) {
-        return roleDao.getRoleById(id);
+        return roleRepository.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
     public void addRole(Role role) {
-        roleDao.addRole(role);
+        roleRepository.save(role);
     }
 }
