@@ -1,4 +1,4 @@
-# Spring Boot (Bootstrap)
+# Task 3.1.3.Spring Boot (Bootstrap без JS)
 
 ## Задание:
 1. Изменить страницы вашего приложения в соответствии со скриншотами, используя Bootstrap.
