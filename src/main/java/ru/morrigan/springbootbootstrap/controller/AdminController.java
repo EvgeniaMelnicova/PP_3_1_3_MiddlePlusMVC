@@ -1,5 +1,6 @@
 package ru.morrigan.springbootbootstrap.controller;
 
+import lombok.AllArgsConstructor;
 import ru.morrigan.springbootbootstrap.model.User;
 import ru.morrigan.springbootbootstrap.service.RoleService;
 import ru.morrigan.springbootbootstrap.service.UserService;
@@ -16,31 +17,26 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 @Controller
 @RequestMapping
 public class AdminController {
     private final UserService userService;
     private final RoleService roleService;
 
-    @Autowired
-    public AdminController(UserService userService, RoleService roleService) {
-        this.userService = userService;
-        this.roleService = roleService;
-    }
-
     @GetMapping("/admin")
     public String showAdminPage(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
-        return "admin/adminPage";
+        return "admin_page";
     }
 
     @GetMapping("/add")
     public String newUserPage(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
-        return "admin/newUser";
+        return "new_user";
     }
 
     @PostMapping("/new")
