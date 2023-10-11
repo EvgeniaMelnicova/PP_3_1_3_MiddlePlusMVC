@@ -1,4 +1,4 @@
-package ru.alexeykedr.springbootbootstrap;
+package ru.morrigan.springbootbootstrap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

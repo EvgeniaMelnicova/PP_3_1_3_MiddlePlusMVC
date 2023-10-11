@@ -1,4 +1,4 @@
-package ru.alexeykedr.springbootbootstrap.security;
+package ru.morrigan.springbootbootstrap.security;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -11,7 +11,6 @@ import java.util.Set;
 
 @Component
 public class LoginSuccessHandler implements AuthenticationSuccessHandler {
-
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest,
                                         HttpServletResponse httpServletResponse,

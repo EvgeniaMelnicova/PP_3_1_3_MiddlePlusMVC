@@ -1,6 +1,6 @@
-package ru.alexeykedr.springbootbootstrap.service;
+package ru.morrigan.springbootbootstrap.service;
 
-import ru.alexeykedr.springbootbootstrap.model.Role;
+import ru.morrigan.springbootbootstrap.model.Role;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.alexeykedr.springbootbootstrap;
+package ru.morrigan.springbootbootstrap;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

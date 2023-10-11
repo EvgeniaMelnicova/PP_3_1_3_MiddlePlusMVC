@@ -1,6 +1,6 @@
-package ru.alexeykedr.springbootbootstrap.dao;
+package ru.morrigan.springbootbootstrap.dao;
 
-import ru.alexeykedr.springbootbootstrap.model.User;
+import ru.morrigan.springbootbootstrap.model.User;
 import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

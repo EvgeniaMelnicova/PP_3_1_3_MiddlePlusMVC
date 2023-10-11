@@ -1,9 +1,9 @@
-package ru.alexeykedr.springbootbootstrap.dao;
+package ru.morrigan.springbootbootstrap.service;
 
-import ru.alexeykedr.springbootbootstrap.model.User;
+import ru.morrigan.springbootbootstrap.model.User;
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
     void saveUser(User user);
 
     void updateUser(User user);

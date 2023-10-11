@@ -1,6 +1,6 @@
-package ru.alexeykedr.springbootbootstrap.dao;
+package ru.morrigan.springbootbootstrap.dao;
 
-import ru.alexeykedr.springbootbootstrap.model.Role;
+import ru.morrigan.springbootbootstrap.model.Role;
 import java.util.List;
 
 public interface RoleDao {

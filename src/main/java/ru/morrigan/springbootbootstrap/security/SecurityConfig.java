@@ -1,5 +1,6 @@
-package ru.alexeykedr.springbootbootstrap.security;
+package ru.morrigan.springbootbootstrap.security;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,17 +13,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+@AllArgsConstructor
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final UserDetailsService userDetailsService;
     private final LoginSuccessHandler loginSuccessHandler;
-
-    @Autowired
-    public SecurityConfig(UserDetailsService userDetailsService, LoginSuccessHandler loginSuccessHandler) {
-        this.userDetailsService = userDetailsService;
-        this.loginSuccessHandler = loginSuccessHandler;
-    }
 
     @Override
     @Autowired

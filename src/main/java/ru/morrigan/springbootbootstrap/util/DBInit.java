@@ -1,9 +1,9 @@
-package ru.alexeykedr.springbootbootstrap.util;
+package ru.morrigan.springbootbootstrap.util;
 
-import ru.alexeykedr.springbootbootstrap.model.Role;
-import ru.alexeykedr.springbootbootstrap.service.UserService;
-import ru.alexeykedr.springbootbootstrap.model.User;
-import ru.alexeykedr.springbootbootstrap.service.RoleService;
+import ru.morrigan.springbootbootstrap.model.Role;
+import ru.morrigan.springbootbootstrap.service.UserService;
+import ru.morrigan.springbootbootstrap.model.User;
+import ru.morrigan.springbootbootstrap.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
@@ -35,7 +35,7 @@ public class DBInit {
         adminSet.add(roleUser);
         userSet.add(roleUser);
 
-        User newUser = new User("Ivan", "Ivanov", 23, "ivan@mail.com", "User",
+        User newUser = new User("Ivan", "Ivanov", 23, "ivan@mail.com", "user",
                 "user", userSet);
         User admin = new User("Garry", "Potter", 30, "garry@gmail.com", "admin",
                 "admin", adminSet);
