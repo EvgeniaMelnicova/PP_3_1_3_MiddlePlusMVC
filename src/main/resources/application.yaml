@@ -45,7 +45,7 @@ spring:
 
 logging:
   level:
-    root: debug
+    root: warn
   charset:
     console: UTF-8
 
