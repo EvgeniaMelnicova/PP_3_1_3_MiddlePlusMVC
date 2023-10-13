@@ -29,14 +29,14 @@ public class AdminController {
         model.addAttribute("users", userService.getAllUsers());
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
-        return "admin_page";
+        return "admin/admin_page";
     }
 
     @GetMapping("/add")
     public String newUserPage(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("user", user);
         model.addAttribute("roles", roleService.getAllRoles());
-        return "new_user";
+        return "admin/new_user";
     }
 
     @PostMapping("/new")
