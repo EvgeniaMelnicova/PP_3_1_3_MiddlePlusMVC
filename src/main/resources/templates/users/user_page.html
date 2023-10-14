@@ -30,34 +30,7 @@
                             <h5 class="my-0 mx-2">User info</h5>
                         </div>
                         <div class="p-3 bg-white border border-top-0">
-                            <table class="usersTable table table-striped bg-white">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Surname</th>
-                                    <th>Age</th>
-                                    <th>Email</th>
-                                    <th>Login</th>
-                                    <th>Role</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td th:text="${user.id}"></td>
-                                    <td th:text="${user.name}"></td>
-                                    <td th:text="${user.surname}"></td>
-                                    <td th:text="${user.age}"></td>
-                                    <td th:text="${user.email}"></td>
-                                    <td th:text="${user.login}"></td>
-                                    <td>
-                                        <th:block th:each="role: ${user.roles}"
-                                                  th:text="${role.userRole} + ' '">
-                                        </th:block>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <div th:replace="fragments/user-info"/>
                         </div>
                     </div>
                 </div>
