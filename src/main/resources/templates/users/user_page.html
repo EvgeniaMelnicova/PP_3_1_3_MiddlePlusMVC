@@ -1,66 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100"
-      xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en">
 
 <head th:replace="layouts/main :: htmlhead"/>
 
 <body>
-<div th:replace="fragments/navigation :: navigation"/>
 
-<div class="container-fluid h-100">
+<div class="container-fluid h-100" style="background-color: rgba(0, 0, 0, 0.0);">
+    <div th:replace="fragments/navigation :: navigation(currentPage='user')"/>
     <div class="row h-100">
-
         <div class="p-0 col-2">
             <div class="nav flex-column nav-pills pt-4" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                <a class="nav-link" href="/admin" sec:authorize="hasAuthority('ADMIN')" role="tab"
+                <a class="nav-link" href="/admin/users" sec:authorize="hasAuthority('ADMIN')" role="tab"
                    aria-controls="v-pills-home" aria-selected="true">Admin</a>
                 <a class="nav-link active" href="/user" sec:authorize="(hasAnyAuthority('ADMIN', 'USER'))" role="tab"
                    aria-controls="v-pills-profile" aria-selected="false">User</a>
             </div>
+
         </div>
 
-        <div class="p-0 col-10 bg-light">
+        <div class="p-0 col-10">
             <div class="tabs p-4">
-                <h1>User information page</h1>
+                <h1>Welcome to your personal page!</h1>
                 <div class="pt-2 tab-content">
                     <div class="tab-pane fade show active" id="description">
                         <div class="p-3 border">
-                            <h5 class="my-0 mx-2">User info</h5>
+                            <h2 class="my-0 mx-2">Below you can find more detailed information about your personal data:</h2>
                         </div>
-                        <div class="p-3 bg-white border border-top-0">
-                            <table class="usersTable table table-striped bg-white">
+                        <div class="p-3 border border-top-0">
+                            <table class="usersTable table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Name</th>
                                     <th>Surname</th>
-                                    <th>Age</th>
-                                    <th>Email</th>
+                                    <th>Phone number</th>
+                                    <th>E-mail</th>
                                     <th>Login</th>
-                                    <th>Role</th>
+                                    <th>Status</th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
-                                <tr>
-                                    <td th:text="${user.id}"></td>
-                                    <td th:text="${user.name}"></td>
-                                    <td th:text="${user.surname}"></td>
-                                    <td th:text="${user.age}"></td>
+                                <tr th:each="user: ${user}">
+                                    <td th:text="${user.firstName}"></td>
+                                    <td th:text="${user.lastName}"></td>
+                                    <td th:text="${user.mobilePhone}"></td>
                                     <td th:text="${user.email}"></td>
-                                    <td th:text="${user.login}"></td>
-                                    <td>
-                                        <th:block th:each="role: ${user.roles}"
-                                                  th:text="${role.userRole} + ' '">
-                                        </th:block>
-                                    </td>
+                                    <td th:text="${user.username}"></td>
+                                    <td th:text="${user.roles}"></td>
                                 </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                <br>
+                <h2>This is all the information that is available to receive with your status.</h2>
             </div>
         </div>
     </div>

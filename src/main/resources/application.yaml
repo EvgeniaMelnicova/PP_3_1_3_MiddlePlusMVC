@@ -38,6 +38,9 @@ spring:
     add-properties: true
   web:
     locale: ru_RU
+    resources:
+      static-locations:
+        - classpath:/layouts/static
   mvc:
     hiddenmethod:
       filter:
